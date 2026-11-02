@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-02T09:52:55+00:00",
+  "title": "Design System: AITU College · Обходной лист",
+  "extensions": {
+    "colorMeta": {
+      "night": {
+        "role": "neutral",
+        "displayName": "Ночь AITU",
+        "tonalRamp": [
+          "#00052e",
+          "#05234e",
+          "#22426f",
+          "#416292",
+          "#6184b6",
+          "#83a7db",
+          "#aacbfc",
+          "#e6effe"
+        ]
+      },
+      "night-2": {
+        "role": "neutral",
+        "displayName": "Ночь приподнятая",
+        "tonalRamp": [
+          "#000333",
+          "#032253",
+          "#204175",
+          "#3f6198",
+          "#5f83bc",
+          "#81a6e2",
+          "#abcbfd",
+          "#e6effe"
+        ]
+      },
+      "night-line": {
+        "role": "neutral",
+        "displayName": "Линия по ночи"
+      },
+      "frost": {
+        "role": "neutral",
+        "displayName": "Иней",
+        "tonalRamp": [
+          "#040b17",
+          "#1c2633",
+          "#384351",
+          "#576272",
+          "#778394",
+          "#9aa6b7",
+          "#bdcadc",
+          "#e5f0fe"
+        ]
+      },
+      "frost-hi": {
+        "role": "neutral",
+        "displayName": "Белый",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "frost-dim": {
+        "role": "neutral",
+        "displayName": "Тусклый иней",
+        "tonalRamp": [
+          "#010a1f",
+          "#16253c",
+          "#32435c",
+          "#50627d",
+          "#7084a0",
+          "#92a7c4",
+          "#b6cbe9",
+          "#e5effe"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Бумага",
+        "tonalRamp": [
+          "#090b0e",
+          "#222529",
+          "#3f4246",
+          "#5e6266",
+          "#7f8387",
+          "#a2a5aa",
+          "#c6c9ce",
+          "#ebeff4"
+        ]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Бумага вторая",
+        "tonalRamp": [
+          "#080b10",
+          "#21252b",
+          "#3e4249",
+          "#5d6268",
+          "#7d838a",
+          "#a0a6ad",
+          "#c4cad1",
+          "#e9eff7"
+        ]
+      },
+      "field": {
+        "role": "neutral",
+        "displayName": "Поле",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Чернила",
+        "tonalRamp": [
+          "#010a20",
+          "#15253e",
+          "#31435e",
+          "#4f627f",
+          "#6f84a2",
+          "#91a6c6",
+          "#b5cbec",
+          "#e6effe"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Чернила вторые",
+        "tonalRamp": [
+          "#020b1d",
+          "#17253a",
+          "#33435a",
+          "#52627b",
+          "#72839d",
+          "#94a6c1",
+          "#b8cbe6",
+          "#e5efff"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Линия",
+        "tonalRamp": [
+          "#060b13",
+          "#1f262e",
+          "#3b434c",
+          "#5a626c",
+          "#7b838e",
+          "#9da6b1",
+          "#c1cad6",
+          "#e6effc"
+        ]
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Линия сильная",
+        "tonalRamp": [
+          "#040b18",
+          "#1b2634",
+          "#374353",
+          "#566273",
+          "#768496",
+          "#98a6b9",
+          "#bccbde",
+          "#e5f0fe"
+        ]
+      },
+      "blue": {
+        "role": "primary",
+        "displayName": "Голубой AITU",
+        "tonalRamp": [
+          "#000a23",
+          "#00254b",
+          "#00437b",
+          "#0b63ac",
+          "#1184e4",
+          "#5da9f9",
+          "#a2cdfe",
+          "#e4f0fe"
+        ]
+      },
+      "blue-ink": {
+        "role": "primary",
+        "displayName": "Синий для текста",
+        "tonalRamp": [
+          "#000a25",
+          "#00254a",
+          "#07427a",
+          "#0061b3",
+          "#3484d9",
+          "#63a9f7",
+          "#a4cdfc",
+          "#e4f0fe"
+        ]
+      },
+      "blue-ink-hover": {
+        "role": "primary",
+        "displayName": "Синий для текста, наведение",
+        "tonalRamp": [
+          "#000a24",
+          "#012549",
+          "#084379",
+          "#1a62a9",
+          "#4085cf",
+          "#64a9f5",
+          "#a5cdfb",
+          "#e3f0ff"
+        ]
+      },
+      "blue-soft": {
+        "role": "primary",
+        "displayName": "Голубая дымка"
+      },
+      "blue-on-dark": {
+        "role": "primary",
+        "displayName": "Голубой на тёмном",
+        "tonalRamp": [
+          "#000b21",
+          "#002648",
+          "#024477",
+          "#1264a7",
+          "#3c86cc",
+          "#60aaf2",
+          "#9fceff",
+          "#e3f0fe"
+        ]
+      },
+      "oxide": {
+        "role": "secondary",
+        "displayName": "Оксид",
+        "tonalRamp": [
+          "#210000",
+          "#4c0202",
+          "#7d0f0b",
+          "#b0231c",
+          "#d84c40",
+          "#f97969",
+          "#fcb5aa",
+          "#fee9e5"
+        ]
+      },
+      "oxide-on-dark": {
+        "role": "secondary",
+        "displayName": "Светлый оксид",
+        "tonalRamp": [
+          "#220000",
+          "#4e0000",
+          "#7b140f",
+          "#a13a30",
+          "#c75d51",
+          "#ef8172",
+          "#ffb3a8",
+          "#fee9e6"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Заголовок героя на лендинге и на странице проверки."
+      },
+      "status": {
+        "displayName": "Status",
+        "purpose": "Строка статуса листа у студента, цвет повторяет состояние."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Заголовки полос лендинга."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Заголовок страницы кабинета."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Основной текст интерфейса."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Заголовки колонок, подписи журнала."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Единственная кривая системы: кнопки, поля, метки и постановка печати."
+      },
+      {
+        "name": "mark-shift",
+        "value": "0.3s var(--ease-out)",
+        "purpose": "Кольцо, фон и цвет метки меняются при смене состояния."
+      },
+      {
+        "name": "badge-pop",
+        "value": "0.45s var(--ease-out), scale 0.2 → 1, opacity 0 → 1",
+        "purpose": "Значок метки проявляется только при смене состояния."
+      },
+      {
+        "name": "stamp",
+        "value": "transform 0.55s, opacity 0.25s var(--ease-out); scale 1.25 rotate(-12deg) → rotate(-4deg)",
+        "purpose": "Печать опускается на лист в герое лендинга в момент закрытия."
+      },
+      {
+        "name": "wash",
+        "value": "2.4s var(--ease-out)",
+        "purpose": "Строка свежей отметки гаснет от blue-soft до прозрачного."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "two-row-headers",
+        "value": "1024px"
+      },
+      {
+        "name": "single-column-landing",
+        "value": "1000px"
+      },
+      {
+        "name": "phone",
+        "value": "760px"
+      },
+      {
+        "name": "vertical-queue",
+        "value": "480px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Главная кнопка",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Главное действие на бумаге и на ночи: вход как студент, «Нет задолженности», проверить лист.",
+      "html": "<button class=\"ds-btn ds-btn-primary\">Нет задолженности</button>",
+      "css": ".ds-btn { font-family: var(--font); display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; padding: 0 18px; border: 1.5px solid transparent; border-radius: var(--radius, 6px); font-size: 0.95rem; font-weight: 560; line-height: 1; cursor: pointer; transition: background-color .18s cubic-bezier(0.16,1,0.3,1), border-color .18s cubic-bezier(0.16,1,0.3,1), transform .12s cubic-bezier(0.16,1,0.3,1); } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 2px solid #1385e5; outline-offset: 2px; } .ds-btn-primary { background: #0a66b8; color: #fff; } .ds-btn-primary:hover { background: #08579d; }"
+    },
+    {
+      "name": "Тихая кнопка",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Второе действие на бумаге: «Есть долг», отмена, фильтры.",
+      "html": "<button class=\"ds-btn-quiet\">Есть долг</button>",
+      "css": ".ds-btn-quiet { font-family: var(--font); height: 44px; padding: 0 18px; background: transparent; color: #0b1b33; border: 1.5px solid #9fadc0; border-radius: 6px; font-size: 0.95rem; font-weight: 560; cursor: pointer; transition: border-color .18s cubic-bezier(0.16,1,0.3,1); } .ds-btn-quiet:hover { border-color: #0b1b33; } .ds-btn-quiet:active { transform: translateY(1px); } .ds-btn-quiet:focus-visible { outline: 2px solid #1385e5; outline-offset: 2px; }"
+    },
+    {
+      "name": "Прозрачная кнопка на ночи",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Второстепенные входы по ролям на тёмном фоне.",
+      "html": "<div class=\"ds-night\"><button class=\"ds-btn-ghost\">Как отдел</button></div>",
+      "css": ".ds-night { background: #001c46; padding: 20px; } .ds-btn-ghost { font-family: var(--font); height: 44px; padding: 0 18px; background: transparent; color: #fff; border: 1.5px solid rgba(201,214,232,0.45); border-radius: 6px; font-size: 0.95rem; font-weight: 560; cursor: pointer; transition: border-color .18s, background-color .18s; } .ds-btn-ghost:hover { border-color: #c9d6e8; background: rgba(201,214,232,0.06); } .ds-btn-ghost:focus-visible { outline: 2px solid #6cb6ff; outline-offset: 2px; }"
+    },
+    {
+      "name": "Кнопка долга",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "Только запись долга.",
+      "html": "<button class=\"ds-btn-danger\">Записать долг</button>",
+      "css": ".ds-btn-danger { font-family: var(--font); height: 44px; padding: 0 18px; background: #c0352b; color: #fff; border: 1.5px solid transparent; border-radius: 6px; font-size: 0.95rem; font-weight: 560; cursor: pointer; } .ds-btn-danger:hover { background: #a52c23; } .ds-btn-danger:focus-visible { outline: 2px solid #1385e5; outline-offset: 2px; }"
+    },
+    {
+      "name": "Поле ввода",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Поле на бумаге с подписью.",
+      "html": "<label class=\"ds-field\"><span>Номер листа</span><input class=\"ds-input\" placeholder=\"2026-0139\"></label>",
+      "css": ".ds-field { font-family: var(--font); display: flex; flex-direction: column; gap: 6px; font-size: 0.875rem; font-weight: 540; color: #0b1b33; } .ds-input { font: inherit; font-size: 1rem; font-weight: 400; height: 44px; padding: 0 12px; background: #fff; color: #0b1b33; border: 1.5px solid #9fadc0; border-radius: 6px; font-variant-numeric: tabular-nums; transition: border-color .15s; } .ds-input:hover { border-color: #4a5a72; } .ds-input:focus-visible { outline: 2px solid #1385e5; outline-offset: 2px; } .ds-input[aria-invalid='true'] { border-color: #c0352b; }"
+    },
+    {
+      "name": "Верхняя панель кабинета",
+      "kind": "nav",
+      "refersTo": "appbar",
+      "description": "Ночная панель: логотипная связка AITU, разделы своей роли (активный подчёркнут голубым на тёмном), ссылка пользователя, кнопка выхода и язык.",
+      "html": "<header class=\"ds-appbar\"><span class=\"ds-brand\"><b class=\"ds-logo\">Astana IT University</b><span class=\"ds-product\">Колледж<b>Обходной лист</b></span></span><nav class=\"ds-roles\"><a href=\"#\" class=\"active\">Листы</a><a href=\"#\">Студенты</a><a href=\"#\">Шаблоны</a></nav><span class=\"ds-end\"><a href=\"#\" class=\"ds-whoami\"><svg viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"8\" r=\"5\"/><path d=\"M20 21a8 8 0 0 0-16 0\"/></svg>Айгерим Сапарова</a><button class=\"ds-icon-btn\" aria-label=\"Выйти\"><svg viewBox=\"0 0 24 24\"><path d=\"m16 17 5-5-5-5\"/><path d=\"M21 12H9\"/><path d=\"M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4\"/></svg></button></span></header>",
+      "css": ".ds-appbar { font-family: var(--font); display: flex; align-items: center; gap: 28px; min-height: 60px; padding: 0 24px; background: #001c46; color: #c9d6e8; } .ds-brand { display: inline-flex; align-items: center; gap: 12px; } .ds-logo { color: #fff; font-size: 0.8rem; width: 80px; line-height: 1.1; } .ds-product { display: flex; flex-direction: column; padding-left: 12px; border-left: 1px solid rgba(201,214,232,0.2); font-size: 0.75rem; line-height: 1.2; color: #8fa3c0; } .ds-product b { font-size: 0.95rem; font-weight: 600; color: #fff; } .ds-roles { display: flex; gap: 4px; } .ds-roles a { padding: 18px 12px 16px; color: #8fa3c0; text-decoration: none; font-size: 0.925rem; border-bottom: 2px solid transparent; } .ds-roles a:hover { color: #fff; } .ds-roles a.active { color: #fff; border-bottom-color: #6cb6ff; } .ds-roles a:focus-visible { outline: 2px solid #6cb6ff; outline-offset: 2px; } .ds-end { margin-left: auto; display: flex; align-items: center; gap: 16px; } .ds-whoami { display: inline-flex; align-items: center; gap: 8px; font-size: 0.875rem; color: #c9d6e8; text-decoration: none; white-space: nowrap; } .ds-whoami:hover { color: #fff; text-decoration: underline; } .ds-end svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; } .ds-icon-btn { display: inline-grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 6px; background: none; color: #8fa3c0; cursor: pointer; } .ds-icon-btn:hover { color: #fff; background: rgba(201,214,232,0.08); } .ds-icon-btn:focus-visible, .ds-whoami:focus-visible { outline: 2px solid #6cb6ff; outline-offset: 2px; }"
+    },
+    {
+      "name": "Вкладки очереди",
+      "kind": "nav",
+      "refersTo": "tab",
+      "description": "Вкладки на бумаге со счётчиками; счётчик долга оксидом.",
+      "html": "<div class=\"ds-tabs\"><button class=\"ds-tab\" aria-selected=\"true\">Ожидают <span>3</span></button><button class=\"ds-tab ds-tab--debt\">С долгом <span>1</span></button><button class=\"ds-tab\">Отмечены <span>5</span></button></div>",
+      "css": ".ds-tabs { font-family: var(--font); display: flex; gap: 2px; border-bottom: 1px solid #cfd8e4; } .ds-tab { font: inherit; border: 0; border-bottom: 2px solid transparent; background: none; padding: 10px 14px; margin-bottom: -1px; color: #4a5a72; font-weight: 520; cursor: pointer; transition: color .15s; } .ds-tab span { margin-left: 4px; font-variant-numeric: tabular-nums; } .ds-tab--debt span { color: #c0352b; } .ds-tab:hover { color: #0b1b33; } .ds-tab[aria-selected='true'] { color: #0b1b33; border-bottom-color: #1385e5; } .ds-tab:focus-visible { outline: 2px solid #1385e5; outline-offset: 2px; }"
+    },
+    {
+      "name": "Метка отдела",
+      "kind": "custom",
+      "refersTo": "mark",
+      "description": "Иконка lucide в круге; состояние по форме: пунктирное кольцо ждёт, сплошное с галочкой подтверждено, сплошное с восклицательным знаком в долгу. Вид identity: сплошное нейтральное кольцо без значка, просто знак отдела.",
+      "html": "<div class=\"ds-marks\"><span class=\"ds-mark\" role=\"img\" aria-label=\"Ожидает\"><svg class=\"ds-ic\" viewBox=\"0 0 24 24\"><path d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\"/></svg></span><span class=\"ds-mark ds-clear\" role=\"img\" aria-label=\"Подтверждено\"><svg class=\"ds-ic\" viewBox=\"0 0 24 24\"><path d=\"M12 7v14\"/><path d=\"M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z\"/></svg><span class=\"ds-badge\"><svg viewBox=\"0 0 24 24\"><path d=\"M20 6 9 17l-5-5\"/></svg></span></span><span class=\"ds-mark ds-debt\" role=\"img\" aria-label=\"Долг\"><svg class=\"ds-ic\" viewBox=\"0 0 24 24\"><path d=\"M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1\"/><path d=\"M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4\"/></svg><span class=\"ds-badge\"><svg viewBox=\"0 0 24 24\"><path d=\"M12 5v9\"/><circle cx=\"12\" cy=\"19\" r=\"1.6\"/></svg></span></span><span class=\"ds-mark ds-identity\" role=\"img\" aria-label=\"Учебная часть\"><svg class=\"ds-ic\" viewBox=\"0 0 24 24\"><path d=\"M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z\"/><path d=\"M22 10v6\"/><path d=\"M6 12.5V16a6 3 0 0 0 12 0v-3.5\"/></svg></span></div>",
+      "css": ".ds-marks { display: flex; gap: 20px; padding: 16px; background: #eef2f7; } .ds-mark { position: relative; display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1.5px dashed #4a5a72; color: #4a5a72; transition: border-color 0.3s cubic-bezier(0.16,1,0.3,1), background-color 0.3s cubic-bezier(0.16,1,0.3,1), color 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-ic { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; } .ds-clear { border-style: solid; border-color: #0a66b8; background: rgba(19,133,229,0.1); color: #0a66b8; } .ds-debt { border-style: solid; border-color: #c0352b; background: rgba(192,53,43,0.08); color: #c0352b; } .ds-badge { position: absolute; right: -4px; bottom: -4px; width: 13px; height: 13px; display: grid; place-items: center; border-radius: 50%; background: #0a66b8; color: #fff; outline: 2px solid #eef2f7; animation: ds-pop 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-debt .ds-badge { background: #c0352b; } .ds-badge svg { width: 70%; height: 70%; } .ds-badge path { fill: none; stroke: currentColor; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; } .ds-badge circle { fill: currentColor; } @keyframes ds-pop { from { transform: scale(0.2); opacity: 0; } to { transform: scale(1); opacity: 1; } } .ds-identity { border-style: solid; border-color: #9fadc0; color: #0b1b33; }"
+    },
+    {
+      "name": "Печать закрытого листа",
+      "kind": "custom",
+      "refersTo": "seal",
+      "description": "Круглая печать: эмблема AITU из официального логотипа, текст по кольцу, номер и дата, наклон −4°.",
+      "html": "<svg class=\"ds-seal\" width=\"180\" height=\"180\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"Печать: № 2026-0142, 29.10.2026\"><defs><path id=\"ds-ring\" d=\"M100 100 m-77 0 a77 77 0 1 1 154 0 a77 77 0 1 1 -154 0\"/></defs><circle class=\"ds-sl\" cx=\"100\" cy=\"100\" r=\"96\" stroke-width=\"3\"/><circle class=\"ds-sl\" cx=\"100\" cy=\"100\" r=\"62\" stroke-width=\"1.2\"/><text class=\"ds-rt\"><textPath href=\"#ds-ring\" textLength=\"480\" lengthAdjust=\"spacingAndGlyphs\">КОЛЛЕДЖ ASTANA IT UNIVERSITY · ОБХОДНОЙ ЛИСТ ЗАКРЫТ · </textPath></text><svg x=\"76\" y=\"50\" width=\"48\" height=\"48\" viewBox=\"286 438 186 186\"><path class=\"ds-emb ds-acc\" d=\"M381.24,497.13c2.7-.73,5.47-1.21,8.28-1.42,1.11-.08,2.25-.13,3.37-.13v-8.39c-1.33,0-2.68.05-4,.15-3.33.25-6.64.82-9.85,1.69l2.2,8.1Z\"/><path class=\"ds-emb\" d=\"M430.21,502.68c-7.66-7.66-17.65-12.97-28.8-14.79l-1.36,8.28c9.38,1.53,17.78,6,24.22,12.44l5.93-5.93Z\"/><path class=\"ds-emb ds-acc\" d=\"M417.08,577.23l4.57,7.03c3.09-2.02,5.95-4.36,8.54-6.95l-5.93-5.93c-2.19,2.19-4.59,4.15-7.19,5.85Z\"/><path class=\"ds-emb ds-acc\" d=\"M356.95,513.88l-6.79-4.94c-2.53,3.47-4.62,7.24-6.23,11.23l7.78,3.15c1.36-3.36,3.12-6.53,5.24-9.45Z\"/><path class=\"ds-emb ds-acc\" d=\"M368.42,493.19c-3.68,1.93-7.07,4.25-10.13,6.9l5.5,6.34c2.57-2.23,5.42-4.18,8.52-5.81.1-.05.21-.1.31-.15l-3.83-7.47c-.12.06-.25.13-.37.19Z\"/><path class=\"ds-emb\" d=\"M343.69,559.19c.52,1.32,1.08,2.61,1.7,3.88,1.4,2.87,3.05,5.59,4.92,8.13,1.6,2.18,3.36,4.23,5.27,6.14l5.93-5.93c-1.6-1.6-3.09-3.33-4.43-5.16-1.57-2.14-2.96-4.43-4.14-6.84-.52-1.06-1-2.15-1.43-3.26-1.21-3.1-2.09-6.38-2.58-9.77l-8.31,1.2c.58,4.04,1.62,7.93,3.07,11.62Z\"/><path class=\"ds-emb\" d=\"M406.14,582.4c-4.19,1.31-8.63,2.02-13.25,2.02-.35,0-.7,0-1.05-.01-3.2-.07-6.32-.49-9.33-1.21l-1.96,8.16c3.53.85,7.2,1.34,10.97,1.44.46.01.91.02,1.37.02,5.47,0,10.74-.83,15.7-2.38,3.4-1.06,6.65-2.46,9.72-4.15l-4.04-7.35c-2.57,1.42-5.29,2.59-8.14,3.48Z\"/><path class=\"ds-emb ds-acc\" d=\"M372.76,579.59c-2.98-1.52-5.77-3.37-8.32-5.5l-5.37,6.44c3.03,2.53,6.34,4.73,9.89,6.54l3.8-7.48Z\"/><path class=\"ds-emb ds-acc\" d=\"M392.89,469.48c-1.78,0-3.58.07-5.34.2-4.45.33-8.86,1.09-13.15,2.26l2.2,8.1c3.78-1.02,7.66-1.69,11.58-1.99,1.56-.12,3.14-.18,4.72-.18v-8.39Z\"/><path class=\"ds-emb\" d=\"M442.73,490.16c-10.22-10.22-23.56-17.33-38.45-19.75l-1.36,8.28c13.12,2.14,24.87,8.4,33.88,17.4l5.93-5.93Z\"/><path class=\"ds-emb\" d=\"M349,583.93c-2.24-2.24-4.32-4.66-6.2-7.22-2.2-3-4.15-6.2-5.79-9.57l-7.55,3.67c1.87,3.83,4.07,7.46,6.57,10.86,2.14,2.91,4.49,5.65,7.04,8.2,1.49,1.48,3.04,2.9,4.65,4.25,4.04,3.38,8.47,6.32,13.21,8.74l3.8-7.48c-4.17-2.13-8.07-4.72-11.63-7.7-1.42-1.19-2.79-2.44-4.1-3.74Z\"/><path class=\"ds-emb\" d=\"M327.5,513.53l7.78,3.15c5.43-13.43,15.48-24.77,28.82-31.75.14-.07.29-.15.43-.22l-3.83-7.47c-.17.08-.33.17-.5.25-15.14,7.93-26.55,20.79-32.71,36.04Z\"/><path class=\"ds-emb ds-acc\" d=\"M333.42,521.99l-8.03-2.43c-1.78,5.91-2.8,12.1-2.98,18.44l8.39.24c.16-5.59,1.06-11.04,2.63-16.25Z\"/><path class=\"ds-emb ds-acc\" d=\"M331.4,548.91l-8.31,1.2c.78,5.39,2.16,10.59,4.09,15.51l7.82-3.05c-1.7-4.34-2.92-8.92-3.61-13.67Z\"/><path class=\"ds-emb ds-acc\" d=\"M426.73,592.08l4.57,7.03c4.13-2.69,7.94-5.82,11.41-9.29l-5.93-5.93c-3.06,3.06-6.42,5.81-10.05,8.18Z\"/><path class=\"ds-emb ds-acc\" d=\"M391.16,602.1l-.32,8.39c.68.02,1.37.03,2.05.03,7.27,0,14.28-1.11,20.89-3.16l-2.46-8.03c-5.83,1.81-12.02,2.79-18.43,2.79-.58,0-1.16,0-1.73-.03Z\"/><path class=\"ds-emb\" d=\"M311.07,506.88l7.78,3.15c6.97-17.26,19.9-31.82,37.04-40.8.18-.1.37-.19.56-.28l-3.83-7.47c-.21.11-.42.21-.62.32-18.94,9.92-33.23,26.01-40.93,45.09Z\"/><path class=\"ds-emb ds-acc\" d=\"M392.89,451.76c-2.23,0-4.48.08-6.69.25-5.57.42-11.09,1.37-16.45,2.82l2.2,8.1c4.85-1.31,9.85-2.17,14.88-2.55,2-.15,4.04-.23,6.06-.23v-8.39Z\"/><path class=\"ds-emb ds-acc\" d=\"M318.51,569.02c-2.18-5.58-3.75-11.46-4.64-17.56l-8.31,1.2c.97,6.74,2.71,13.25,5.12,19.41l7.82-3.05Z\"/><path class=\"ds-emb ds-acc\" d=\"M308.42,514.42c-2.23,7.39-3.5,15.14-3.72,23.08l8.39.24c.2-7.18,1.35-14.2,3.37-20.88l-8.03-2.43Z\"/><path class=\"ds-emb ds-acc\" d=\"M330.56,602.4l5.93-5.93c-2.88-2.88-5.55-5.99-7.97-9.28l-6.77,4.96c2.67,3.64,5.62,7.07,8.8,10.25Z\"/><path class=\"ds-emb ds-acc\" d=\"M435.37,617.32l-4.04-7.35c-4.68,2.58-9.64,4.71-14.82,6.32l2.46,8.03c5.74-1.78,11.23-4.13,16.41-6.99Z\"/><path class=\"ds-emb ds-acc\" d=\"M390.48,619.81c-5.58-.17-11.01-.91-16.25-2.17l-1.96,8.16c5.77,1.39,11.75,2.2,17.89,2.39l.32-8.39Z\"/><path class=\"ds-emb\" d=\"M455.25,477.64c-12.79-12.79-29.48-21.68-48.11-24.72l-1.36,8.28c16.86,2.75,31.96,10.79,43.54,22.37l5.93-5.93Z\"/><path class=\"ds-emb\" d=\"M421.7,633.25c-9.21,2.83-18.9,4.31-28.81,4.31-1.03,0-2.06-.02-3.09-.05-6.71-.21-13.31-1.09-19.72-2.62l-1.96,8.16c6.94,1.65,14.08,2.61,21.36,2.84,1.13.04,2.27.06,3.41.06,10.76,0,21.27-1.6,31.27-4.67,6.86-2.11,13.48-4.92,19.77-8.39l-4.04-7.36c-5.79,3.19-11.87,5.78-18.19,7.72Z\"/><path class=\"ds-emb ds-acc\" d=\"M325,621.35c6.16,5.16,12.81,9.55,19.85,13.14l3.81-7.48c-6.48-3.3-12.61-7.35-18.27-12.1l-5.38,6.44Z\"/><path class=\"ds-emb ds-acc\" d=\"M299.49,511.72l-8.03-2.43c-2.68,8.87-4.21,18.18-4.47,27.71l8.39.24c.25-8.78,1.65-17.35,4.12-25.52Z\"/><path class=\"ds-emb\" d=\"M461.88,471.01l5.93-5.93h0c-15.92-15.92-36.01-26.14-57.81-29.66l-1.36,8.28c20.07,3.24,38.57,12.65,53.23,27.31h0Z\"/><path class=\"ds-emb ds-acc\" d=\"M385.49,442.72c2.45-.18,4.94-.28,7.4-.28v-8.39c-2.67,0-5.37.1-8.03.3-6.68.5-13.32,1.64-19.75,3.38,0,0,0,0,0,0l2.2,8.1c5.92-1.6,12.04-2.65,18.18-3.11Z\"/><path class=\"ds-emb\" d=\"M296.33,554l-8.31,1.2c3.22,22.53,13.57,43.33,29.95,59.72.01.01.03.02.04.04l5.93-5.94s-.02-.02-.04-.03c-15.08-15.08-24.62-34.24-27.58-54.99Z\"/><path class=\"ds-emb\" d=\"M347.69,453.52c.23-.12.45-.23.68-.35l-3.83-7.47c-.25.13-.5.25-.75.38-22.75,11.91-39.9,31.24-49.15,54.14l7.78,3.15c8.52-21.09,24.32-38.88,45.26-49.86Z\"/><path class=\"ds-emb ds-acc\" d=\"M461.88,608.99c-4.87,4.87-10.17,9.16-15.81,12.84l4.57,7.04c6.12-4,11.88-8.65,17.17-13.94l-5.93-5.93Z\"/></svg><text class=\"ds-num\" x=\"100\" y=\"122\" text-anchor=\"middle\">№ 2026-0142</text><text class=\"ds-date\" x=\"100\" y=\"141\" text-anchor=\"middle\">29.10.2026</text></svg>",
+      "css": ".ds-seal { color: #0a66b8; transform: rotate(-4deg); background: #eef2f7; font-family: 'Geologica Variable', 'Segoe UI', system-ui, sans-serif; } .ds-sl { fill: none; stroke: currentColor; } .ds-rt { fill: currentColor; font-size: 12.5px; font-weight: 600; letter-spacing: 0.04em; } .ds-emb { fill: currentColor; } .ds-acc { fill: #1385e5; } .ds-num { fill: currentColor; font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; } .ds-date { fill: currentColor; font-size: 12px; font-variant-numeric: tabular-nums; opacity: 0.8; }"
+    },
+    {
+      "name": "Выбор студента",
+      "kind": "input",
+      "refersTo": "picker-list",
+      "description": "Комбобокс: поле поиска и список под ним на белом с рамкой 1.5px, без тени; наведённый пункт заливается голубой дымкой.",
+      "html": "<div class=\"ds-picker\"><input class=\"ds-picker-input\" value=\"Сапар\" aria-label=\"Студент\"><ul class=\"ds-picker-list\"><li><button>Сапарова Айгерим · ПО-2201</button></li><li><button>Сапаров Ернар · ВТ-2103</button></li></ul></div>",
+      "css": ".ds-picker { position: relative; width: 320px; padding-bottom: 110px; font-family: var(--font); } .ds-picker-input { width: 100%; height: 44px; padding: 0 12px; background: #fff; color: #0b1b33; border: 1.5px solid #9fadc0; border-radius: 6px; font: inherit; } .ds-picker-input:focus-visible { outline: 2px solid #1385e5; outline-offset: 2px; } .ds-picker-list { position: absolute; top: 48px; left: 0; right: 0; margin: 0; padding: 4px; list-style: none; background: #fff; border: 1.5px solid #9fadc0; border-radius: 6px; } .ds-picker-list button { display: block; width: 100%; padding: 10px 12px; border: 0; border-radius: 4px; background: none; text-align: left; font: inherit; color: #0b1b33; cursor: pointer; } .ds-picker-list button:hover, .ds-picker-list button:focus-visible { background: rgba(19,133,229,0.1); outline: none; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Тамга",
+    "overview": "Каждый отдел ставит на листе свою метку, а закрытый лист получает круглую печать колледжа с номером и датой. Система стоит на двух поверхностях в фирменных цветах AITU. Публичные экраны (лендинг, проверка, вход, 404) и верхняя панель кабинетов лежат на ночном тёмно-синем фоне AITU с едва заметным точечным зерном, метки и печать на нём светлые. В кабинетах рабочая поверхность светлая, холодная бумага: здесь плотные таблицы и списки, решения принимаются быстро. Пунктирные концентрические кольца логотипа AITU повторяются в пунктирных границах листа, а в центре печати стоит сама эмблема AITU.\n\nСостояние читается по форме, цвет только подтверждает его. Метка отдела выглядит как иконка lucide в круге: ожидающую обводит пунктирное кольцо, подтверждённую сплошное синее кольцо со значком-галочкой, метку с долгом сплошное оксидное кольцо с восклицательным знаком. Голубой AITU рисует графику и акцент эмблемы, а его затемнённый вариант несёт кнопки, синий текст, метки и печать на бумаге. Оксид появляется только там, где есть долг. Карточек и теней нет, блоки разделяют линии, пунктир и смена фона полосы. Движение бывает только при смене состояния: значок метки проявляется из точки, печать опускается на лист с поворотом.\n\nПлотность зависит от роли. Лендинг и проверка просторные, с крупным заголовком и широкими полями. Кабинет отдела устроен как очередь-таблица с массовыми действиями. У студента один столбец шириной 680px, и строка статуса набрана крупнее всего на странице.",
+    "keyCharacteristics": [
+      "Два поля: ночной тёмно-синий AITU для публичных экранов и холодная бумага для работы.",
+      "Логотип AITU в шапке: белая перекраска на тёмном, официальный цветной файл на печатном листе.",
+      "Метки отделов: узнаваемые иконки lucide (книга, кошелёк, дом, щит, ноутбук, шапка выпускника) в круге.",
+      "Три состояния различаются формой: пунктирное кольцо, сплошное кольцо с галочкой, сплошное кольцо с восклицательным знаком. Четвёртый вид, знак отдела без состояния, обведён сплошным нейтральным кольцом без значка.",
+      "Закрытый лист получает круглую печать: эмблема AITU из официального логотипа, текст по кольцу, номер и дата, наклон −4°.",
+      "Один шрифт, Geologica Variable. Заголовки режет ось `SHRP 100`, интерфейс набран без неё.",
+      "Ни карточек, ни теней: структуру задают линии, пунктир и фон полос."
+    ],
+    "rules": [
+      {
+        "name": "The Two Blues Rule",
+        "body": "`blue` рисует, `blue-ink` пишет. Любой синий текст, любая синяя заливка под белым текстом, а на бумаге ещё метки и печать берут `blue-ink`. Линии маршрута, акцент эмблемы и фокус берут `blue`.",
+        "section": "colors"
+      },
+      {
+        "name": "The Oxide Is Debt Rule",
+        "body": "Оксид обозначает долг или ошибку (ввода, загрузки, импорта) и больше ничего. Если на экране нет долга и ничего не сломалось, оксида на нём нет.",
+        "section": "colors"
+      },
+      {
+        "name": "The Shape Before Tint Rule",
+        "body": "Состояние метки читается без цвета: пунктирное кольцо ждёт, сплошное кольцо с галочкой подтверждено, сплошное кольцо с восклицательным знаком в долгу. Цвет подтверждает форму и никогда её не заменяет.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Grounds Rule",
+        "body": "На ночном фоне работают только `frost-*` и варианты `-on-dark`. Светлые токены (`ink`, `line`, `blue`, `oxide`) на ночь не переносятся. Исключений два: главная кнопка `blue-ink` стоит на ночи как есть, а значки меток с белым глифом сохраняют насыщенные `blue` и `oxide` на обоих фонах.",
+        "section": "colors"
+      },
+      {
+        "name": "The Carved Headings Rule",
+        "body": "Ось `SHRP 100` включается только на заголовках страниц и полос, на сводке и на строке статуса. Кнопки, таблицы и основной текст её не получают.",
+        "section": "typography"
+      },
+      {
+        "name": "The Audit Agate Rule",
+        "body": "Журнал аудита набран мелко (0.8125rem, время и номер 0.75rem), строки с полями 4px и пунктирным разделителем. Это самый плотный блок системы, так задумано.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Lift Rule",
+        "body": "`box-shadow` в системе не используется. Если элементу нужно выделиться, ему меняют поверхность (ночь), фон (`paper-2`, `blue-soft`) или добавляют линию.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** ставьте логотип AITU только официальным файлом: белую перекраску на ночи, цветной оригинал на светлом и в печати. Рядом подпись «Колледж · Обходной лист».",
+      "**Do** берите `blue-ink` (#0a66b8) для синего текста, кнопок, меток и печати на бумаге, `blue` (#1385e5) для линий, акцента эмблемы и фокуса.",
+      "**Do** давайте каждому новому отделу узнаваемую иконку lucide в круге со штрихом 1.75.",
+      "**Do** передавайте состояние формой: пунктирное кольцо для ожидания, сплошное кольцо с галочкой для подтверждения, сплошное кольцо с восклицательным знаком для долга. Цвет добавляется сверху. Где отдел нужно просто назвать, ставьте вид identity: сплошное нейтральное кольцо без значка.",
+      "**Do** подписывайте значения таблицы названием колонки, когда на телефоне она складывается в стопку.",
+      "**Do** ставьте публичные экраны и вход на ночь AITU с точечным зерном, рабочие кабинеты на бумагу.",
+      "**Do** набирайте номера, даты, счётчики и журнал табличными цифрами.",
+      "**Do** отключайте появление значка, постановку печати, заливку строки и переливание скелета при `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "**Don't** заливайте кнопки и не набирайте текст голубым `#1385e5`: белый на нём и он на бумаге не проходят AA.",
+      "**Don't** используйте `box-shadow` и не собирайте контент в карточки с рамкой и фоном, выпадающие списки тоже. Разделяйте линиями, пунктиром и фоном полос.",
+      "**Don't** применяйте оксид ни для чего, кроме долга и ошибок.",
+      "**Don't** переносите светлые токены (`ink`, `line`, `blue`, `oxide`) на ночь. Там работают `frost-*` и варианты `-on-dark`.",
+      "**Don't** перерисовывайте и не перекрашивайте логотип AITU сверх двух имеющихся файлов. Эмблема в печати берётся контурами из официального логотипа.",
+      "**Don't** запускайте анимацию меток при первой отрисовке кабинета. Движение означает смену состояния.",
+      "**Don't** придумывайте отделам собственные знаки: такие знаки отклонены как вводящие в заблуждение. Только узнаваемые иконки."
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+node_modules/
+frontend/dist/
+frontend/e2e-report/
+frontend/test-results/
+.env
+.env.local
+# скриншоты ревью и журналы инструмента дизайна: большие и генерируются заново
+.impeccable/review/
+.impeccable/questions/
+*.tsbuildinfo
