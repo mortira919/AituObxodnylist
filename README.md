@@ -7,6 +7,7 @@
 | Папка или файл | Что внутри |
 |---|---|
 | [frontend/](frontend/) | Веб-приложение на React + Vite + TypeScript: лендинг, вход, кабинеты студента, отдела и учебной части, проверка по QR. Запуск и архитектура описаны в [frontend/README.md](frontend/README.md) |
+| [backend/](backend/) | HTTP API на Go/Gin, PostgreSQL, миграции и инструкция запуска в [backend/README.md](backend/README.md) |
 | [docs/backend/API.md](docs/backend/API.md) | Справочник API для бэкенда: каждый запрос с примерами, ошибками и правилами |
 | [docs/backend/README.md](docs/backend/README.md) | ТЗ для бэкенда: модель данных (SQL), бизнес-правила R1–R20, права, безопасность, Telegram, импорт |
 | [docs/backend/openapi.yaml](docs/backend/openapi.yaml) | Контракт API в формате OpenAPI 3 |
@@ -25,3 +26,7 @@ npm run e2e             # сквозные сценарии на все роли
 ```
 
 Кабинеты работают только с настоящим бэкендом. Сквозные тесты ходят в фейковый сервер из `frontend/e2e/`, который повторяет контракт API.
+
+## Запуск бэкенда
+
+Инструкции по локальному PostgreSQL, первому администратору и переменным окружения: [backend/README.md](backend/README.md).
