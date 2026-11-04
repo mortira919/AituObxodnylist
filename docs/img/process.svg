@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" font-family="Liberation Serif, Times New Roman, serif" font-size="14">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#000"/></marker></defs>
+<rect width="900" height="520" fill="#fff"/>
+<text x="20" y="28" font-weight="bold" font-size="16">AS-IS: последовательный обход</text>
+<g fill="none" stroke="#000" stroke-width="1.2">
+<rect x="20" y="45" width="120" height="60"/><rect x="170" y="45" width="120" height="60"/><rect x="320" y="45" width="120" height="60"/>
+<rect x="470" y="45" width="120" height="60"/><rect x="620" y="45" width="120" height="60"/><rect x="770" y="45" width="110" height="60"/>
+<path d="M530,105 C530,170 380,170 380,108" stroke-dasharray="5,4" marker-end="url(#a)"/>
+</g>
+<g text-anchor="middle">
+<text x="80" y="72">Заявление,</text><text x="80" y="90">бумажный бланк</text>
+<text x="230" y="72">Кабинет 1</text><text x="230" y="90">подпись</text>
+<text x="380" y="72">Кабинет 2</text><text x="380" y="90">нет на месте</text>
+<text x="530" y="72">Кабинет 3</text><text x="530" y="90">долг у двери</text>
+<text x="680" y="72">… кабинеты</text><text x="680" y="90">4–7</text>
+<text x="825" y="72">Сдача листа</text><text x="825" y="90">в учебную часть</text>
+<text x="455" y="182" font-size="13">повторные визиты после устранения долга</text>
+</g>
+<g stroke="#000" stroke-width="1.2" marker-end="url(#a)">
+<line x1="140" y1="75" x2="168" y2="75"/><line x1="290" y1="75" x2="318" y2="75"/><line x1="440" y1="75" x2="468" y2="75"/><line x1="590" y1="75" x2="618" y2="75"/><line x1="740" y1="75" x2="768" y2="75"/>
+</g>
+<text x="20" y="235" font-weight="bold" font-size="16">TO-BE: параллельные отметки в системе</text>
+<g fill="none" stroke="#000" stroke-width="1.2">
+<rect x="20" y="300" width="140" height="70"/>
+<rect x="210" y="300" width="140" height="70"/>
+<rect x="400" y="250" width="170" height="40"/><rect x="400" y="300" width="170" height="40"/><rect x="400" y="350" width="170" height="40"/><rect x="400" y="400" width="170" height="40"/>
+<rect x="620" y="300" width="120" height="70"/>
+<rect x="780" y="300" width="100" height="70"/>
+<rect x="400" y="460" width="340" height="45" stroke-dasharray="5,4"/>
+</g>
+<g text-anchor="middle">
+<text x="90" y="328">Учебная часть</text><text x="90" y="346">создаёт лист</text>
+<text x="280" y="328">Система копирует</text><text x="280" y="346">отделы из шаблона</text>
+<text x="485" y="275">Библиотека</text><text x="485" y="325">Бухгалтерия</text><text x="485" y="375">Общежитие, ВУС</text><text x="485" y="425">IT-отдел, учебная часть</text>
+<text x="680" y="328">Все «нет</text><text x="680" y="346">задолженности»</text>
+<text x="830" y="322">Лист закрыт</text><text x="830" y="340">PDF + QR,</text><text x="830" y="358">проверка</text>
+<text x="570" y="480" font-size="13">Долг: студент получает описание и срок в кабинете и Telegram,</text>
+<text x="570" y="497" font-size="13">идёт только в этот отдел, отдел меняет отметку</text>
+</g>
+<g stroke="#000" stroke-width="1.2" marker-end="url(#a)">
+<line x1="160" y1="335" x2="208" y2="335"/>
+<line x1="350" y1="335" x2="398" y2="270"/><line x1="350" y1="335" x2="398" y2="320"/><line x1="350" y1="335" x2="398" y2="370"/><line x1="350" y1="335" x2="398" y2="420"/>
+<line x1="570" y1="270" x2="618" y2="325"/><line x1="570" y1="320" x2="618" y2="330"/><line x1="570" y1="370" x2="618" y2="340"/><line x1="570" y1="420" x2="618" y2="350"/>
+<line x1="740" y1="335" x2="778" y2="335"/>
+</g>
+</svg>

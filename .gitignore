@@ -8,3 +8,13 @@ frontend/test-results/
 .impeccable/review/
 .impeccable/questions/
 *.tsbuildinfo
+# локальная настройка инструмента, не часть проекта
+.webai/
+# исходные материалы курса: критерии и черновик критерия 1 (вошёл в docs/obhodnoy_list_documentation.md)
+/Требования.docx
+/Obhodnoy_list_Astana_IT_College_Kriteriy1.docx
+# генерируются scripts/build_docs.sh
+docs/ref.docx
+docs/img/*.png
+output/*.pdf
+output/*.tmp
