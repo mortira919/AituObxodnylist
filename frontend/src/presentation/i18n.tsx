@@ -83,13 +83,31 @@ export function usePick() {
   return (p: Pair) => (lang === 'kz' ? p[1] : p[0])
 }
 
+// Chrome поставляется без казахской локали: toLocaleDateString('kk-KZ') молча отдаёт «4 ноября».
+// Поэтому казахские даты собираем сами, по-русски доверяем браузеру.
+const KZ_MONTHS = ['қаңтар', 'ақпан', 'наурыз', 'сәуір', 'мамыр', 'маусым', 'шілде', 'тамыз', 'қыркүйек', 'қазан', 'қараша', 'желтоқсан']
+const two = (n: number) => String(n).padStart(2, '0')
+
+export function formatKz(iso: string, kind: 'date' | 'dateTime' | 'full'): string {
+  const d = new Date(iso)
+  const day = `${d.getDate()} ${KZ_MONTHS[d.getMonth()]}`
+  if (kind === 'full') return `${d.getFullYear()} жылғы ${day}`
+  if (kind === 'dateTime') return `${day}, ${two(d.getHours())}:${two(d.getMinutes())}`
+  return day
+}
+
 export function useFormat() {
   const { lang } = useLang()
-  const locale = lang === 'kz' ? 'kk-KZ' : 'ru-RU'
+  if (lang === 'kz') {
+    return {
+      date: (iso: string) => formatKz(iso, 'date'),
+      dateTime: (iso: string) => formatKz(iso, 'dateTime'),
+      full: (iso: string) => formatKz(iso, 'full'),
+    }
+  }
   return {
-    date: (iso: string) => new Date(iso).toLocaleDateString(locale, { day: 'numeric', month: 'long' }),
-    dateTime: (iso: string) =>
-      new Date(iso).toLocaleString(locale, { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }),
-    full: (iso: string) => new Date(iso).toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' }),
+    date: (iso: string) => new Date(iso).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' }),
+    dateTime: (iso: string) => new Date(iso).toLocaleString('ru-RU', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }),
+    full: (iso: string) => new Date(iso).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }),
   }
 }
