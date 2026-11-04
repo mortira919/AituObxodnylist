@@ -249,10 +249,7 @@ func (s *Server) importStudents(c *gin.Context) {
 	}
 	data = bytes.TrimPrefix(data, []byte{0xef, 0xbb, 0xbf})
 	separator := detectCSVSeparator(data)
-	reader := csv.NewReader(bytes.NewReader(data))
-	reader.Comma = separator
-	reader.FieldsPerRecord = -1
-	reader.ReuseRecord = false
+	reader := newImportReader(data, separator)
 	rows := make([]csvRow, 0, 32)
 	for {
 		record, err := reader.Read()
@@ -357,4 +354,15 @@ func detectCSVSeparator(data []byte) rune {
 func formulaCell(value string) bool {
 	value = strings.TrimLeft(value, " \t\r\n")
 	return strings.HasPrefix(value, "=") || strings.HasPrefix(value, "+") || strings.HasPrefix(value, "-") || strings.HasPrefix(value, "@")
+}
+
+// newImportReader reads one student per row. LazyQuotes keeps a stray quote inside a cell
+// (a nickname like Ерлан "Ер" or a formula like =HYPERLINK("x")) from rejecting the whole file:
+// such rows reach the per-row checks and are skipped there with "validation" or created.
+func newImportReader(data []byte, separator rune) *csv.Reader {
+	reader := csv.NewReader(bytes.NewReader(data))
+	reader.Comma = separator
+	reader.FieldsPerRecord = -1
+	reader.LazyQuotes = true
+	return reader
 }

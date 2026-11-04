@@ -183,6 +183,23 @@ func TestCSVParsingAndFormulaGuard(t *testing.T) {
 	}
 }
 
+func TestCSVStrayQuotesDoNotRejectWholeFile(t *testing.T) {
+	data := []byte("name;group;login\nЕрлан \"Ер\" Нуров;PO-2201;e.nurov\n=HYPERLINK(\"x\");PO-2201;evil\nAliya Ken;PO-2301;a.ken\n")
+	records, err := newImportReader(data, ';').ReadAll()
+	if err != nil {
+		t.Fatalf("stray quotes rejected the file: %v", err)
+	}
+	if len(records) != 4 {
+		t.Fatalf("rows = %d, want 4", len(records))
+	}
+	if records[1][0] != `Ерлан "Ер" Нуров` {
+		t.Errorf("name with quotes = %q", records[1][0])
+	}
+	if !formulaCell(records[2][0]) {
+		t.Errorf("formula row was not detected: %q", records[2][0])
+	}
+}
+
 func TestRateLimiterExpiresAndResets(t *testing.T) {
 	limiter := newRateLimiter()
 	if allowed, _ := limiter.allow("test", 1, time.Millisecond); !allowed {
