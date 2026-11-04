@@ -107,11 +107,12 @@ export type ErrorCode =
   | 'network'
 
 export class DomainError extends Error {
-  constructor(
-    public code: ErrorCode,
-    public field?: string,
-  ) {
+  code: ErrorCode
+  field?: string
+  constructor(code: ErrorCode, field?: string) {
     super(code)
+    this.code = code
+    this.field = field
   }
 }
 

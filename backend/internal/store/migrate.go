@@ -16,9 +16,6 @@ import (
 var migrationFS embed.FS
 
 func Migrate(ctx context.Context, db *sql.DB) error {
-	if _, err := db.ExecContext(ctx, `CREATE TABLE IF NOT EXISTS schema_migrations (version integer PRIMARY KEY, applied_at timestamptz NOT NULL DEFAULT now())`); err != nil {
-		return fmt.Errorf("create migration table: %w", err)
-	}
 	sqlText, err := migrationFS.ReadFile("migrations/001_init.sql")
 	if err != nil {
 		return err
@@ -28,8 +25,12 @@ func Migrate(ctx context.Context, db *sql.DB) error {
 		return err
 	}
 	defer tx.Rollback()
-	if _, err := tx.ExecContext(ctx, `LOCK TABLE schema_migrations IN EXCLUSIVE MODE`); err != nil {
+	// Serialise concurrent starts, including the first CREATE TABLE below.
+	if _, err := tx.ExecContext(ctx, `SELECT pg_advisory_xact_lock(7274101)`); err != nil {
 		return fmt.Errorf("lock migrations: %w", err)
+	}
+	if _, err := tx.ExecContext(ctx, `CREATE TABLE IF NOT EXISTS schema_migrations (version integer PRIMARY KEY, applied_at timestamptz NOT NULL DEFAULT now())`); err != nil {
+		return fmt.Errorf("create migration table: %w", err)
 	}
 	var applied bool
 	if err := tx.QueryRowContext(ctx, `SELECT EXISTS (SELECT 1 FROM schema_migrations WHERE version = 1)`).Scan(&applied); err != nil {

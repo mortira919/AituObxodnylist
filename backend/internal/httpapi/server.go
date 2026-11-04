@@ -113,10 +113,15 @@ func New(db *sql.DB, config Config) http.Handler {
 	}
 	s := &Server{db: db, config: config, logger: config.Logger, limiter: newRateLimiter()}
 	r := gin.New()
-	if len(config.TrustedProxies) > 0 {
-		if err := r.SetTrustedProxies(config.TrustedProxies); err != nil {
-			s.logger.Error("invalid trusted proxy configuration")
-		}
+	// Gin trusts every proxy by default, which lets any client spoof X-Forwarded-For and
+	// dodge the per-IP rate limits. Trust only the configured proxies (none by default).
+	trusted := config.TrustedProxies
+	if len(trusted) == 0 {
+		trusted = nil
+	}
+	if err := r.SetTrustedProxies(trusted); err != nil {
+		s.logger.Error("invalid trusted proxy configuration")
+		_ = r.SetTrustedProxies(nil)
 	}
 	r.Use(gin.CustomRecovery(func(c *gin.Context, _ any) {
 		s.logger.Error("panic handling request", "path", c.Request.URL.Path)
@@ -354,7 +359,7 @@ func (s *Server) login(c *gin.Context) {
 	if !decodeJSON(c, &input) {
 		return
 	}
-	input.Login = strings.TrimSpace(input.Login)
+	input.Login = strings.ToLower(strings.TrimSpace(input.Login))
 	if input.Login == "" || len(input.Login) > 64 || input.Password == "" || utf8.RuneCountInString(input.Password) > 128 {
 		writeError(c, http.StatusBadRequest, "validation", "", "Invalid login request")
 		return
@@ -384,6 +389,8 @@ func (s *Server) login(c *gin.Context) {
 		return
 	}
 	s.limiter.reset(key)
+	// Expired sessions are otherwise only removed when their owner comes back.
+	_, _ = s.db.ExecContext(c.Request.Context(), `DELETE FROM sessions WHERE expires_at <= now() OR created_at <= now() - interval '7 days'`)
 	tokenBytes := make([]byte, 32)
 	if _, err := rand.Read(tokenBytes); err != nil {
 		s.internalError(c, err)

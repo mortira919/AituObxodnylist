@@ -6,6 +6,7 @@ import (
 	"log/slog"
 	"net/http"
 	"net/http/httptest"
+	"strconv"
 	"strings"
 	"testing"
 	"time"
@@ -215,5 +216,31 @@ func TestRateLimiterExpiresAndResets(t *testing.T) {
 	limiter.reset("test")
 	if allowed, _ := limiter.allow("test", 1, time.Second); !allowed {
 		t.Fatal("request should be allowed after a reset")
+	}
+}
+
+func TestRateLimitIgnoresSpoofedForwardedFor(t *testing.T) {
+	handler := testHandler()
+	for i := 0; i < 31; i++ {
+		req := httptest.NewRequest(http.MethodGet, apiPrefix+"/public/verify/invalid", nil)
+		req.RemoteAddr = "198.51.100.7:4000"
+		req.Header.Set("X-Forwarded-For", "203.0.113."+strconv.Itoa(i+1))
+		res := httptest.NewRecorder()
+		handler.ServeHTTP(res, req)
+		if i == 30 && res.Code != http.StatusTooManyRequests {
+			t.Fatalf("spoofed X-Forwarded-For bypassed the rate limit: status %d", res.Code)
+		}
+	}
+}
+
+func TestRandomLinkCodeHasSixDigits(t *testing.T) {
+	for i := 0; i < 200; i++ {
+		code, err := randomLinkCode()
+		if err != nil {
+			t.Fatal(err)
+		}
+		if len(code) != 6 || code[0] == '0' {
+			t.Fatalf("unexpected link code %q", code)
+		}
 	}
 }

@@ -5,7 +5,9 @@ import { DomainError, type ErrorCode } from '../domain/clearance'
 
 type Query = Record<string, string | number | undefined>
 
-export function createHttpApi(baseUrl: string, onUnauthorized: () => void = () => {}): ClearanceApi {
+export function createHttpApi(rawBaseUrl: string, onUnauthorized: () => void = () => {}): ClearanceApi {
+  // лишний «/» в конце адреса дал бы двойной слэш в путях
+  const baseUrl = rawBaseUrl.replace(/\/+$/, '')
   async function request<T>(method: string, path: string, body?: unknown, query?: Query): Promise<T> {
     const qs = query ? new URLSearchParams(Object.entries(query).filter(([, v]) => v !== undefined && v !== '') as [string, string][]).toString() : ''
     const isForm = body instanceof FormData

@@ -204,11 +204,14 @@ const LOGIN_RE = /^[a-z0-9._-]{3,64}$/
 const tempPassword = () => `tmp-${Math.random().toString(36).slice(2, 10)}`
 
 class ApiFail {
-  constructor(
-    public status: number,
-    public code: string,
-    public field?: string,
-  ) {}
+  status: number
+  code: string
+  field?: string
+  constructor(status: number, code: string, field?: string) {
+    this.status = status
+    this.code = code
+    this.field = field
+  }
 }
 const fail = (status: number, code: string, field?: string): never => {
   throw new ApiFail(status, code, field)

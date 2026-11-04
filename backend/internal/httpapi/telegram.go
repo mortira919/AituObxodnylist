@@ -164,11 +164,12 @@ func (s *Server) telegramWebhook(c *gin.Context) {
 }
 
 func randomLinkCode() (string, error) {
-	value, err := rand.Int(rand.Reader, big.NewInt(9000))
+	value, err := rand.Int(rand.Reader, big.NewInt(900000))
 	if err != nil {
 		return "", err
 	}
-	return fmt.Sprintf("%04d", value.Int64()+1000), nil
+	// Six digits: with four, anyone messaging the bot could guess a live code of another student.
+	return fmt.Sprintf("%06d", value.Int64()+100000), nil
 }
 
 func (s *Server) notifyAfterMark(notification markNotification) {

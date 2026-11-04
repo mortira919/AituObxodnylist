@@ -81,7 +81,9 @@ func main() {
 
 	shutdownCtx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
 	defer stop()
+	shutdownDone := make(chan struct{})
 	go func() {
+		defer close(shutdownDone)
 		<-shutdownCtx.Done()
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		defer cancel()
@@ -95,6 +97,9 @@ func main() {
 		logger.Error("HTTP server failed", "error", err)
 		os.Exit(1)
 	}
+	// ListenAndServe returns as soon as Shutdown starts; wait until in-flight requests finish.
+	stop()
+	<-shutdownDone
 }
 
 func envString(name, fallback string) string {
