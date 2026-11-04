@@ -1,3 +1,6 @@
 {
-  "rewrites": [{ "source": "/((?!assets/).*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "https://aitu-clearance-api.onrender.com/api/:path*" },
+    { "source": "/((?!assets/).*)", "destination": "/index.html" }
+  ]
 }

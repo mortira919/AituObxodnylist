@@ -71,7 +71,7 @@ func main() {
 	}
 
 	server := &http.Server{
-		Addr:              envString("HTTP_ADDR", ":8000"),
+		Addr:              httpAddr(),
 		Handler:           httpapi.New(db, config),
 		ReadHeaderTimeout: 5 * time.Second,
 		ReadTimeout:       time.Minute,
@@ -126,4 +126,15 @@ func commaSeparated(value string) []string {
 		}
 	}
 	return result
+}
+
+// httpAddr prefers HTTP_ADDR, then the PORT variable that hosting platforms such as Render set.
+func httpAddr() string {
+	if addr := strings.TrimSpace(os.Getenv("HTTP_ADDR")); addr != "" {
+		return addr
+	}
+	if port := strings.TrimSpace(os.Getenv("PORT")); port != "" {
+		return ":" + port
+	}
+	return ":8000"
 }

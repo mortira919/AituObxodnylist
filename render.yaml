@@ -1,0 +1,30 @@
+# Render Blueprint: бэкенд на бесплатном тарифе. Секреты (sync: false) вводятся в панели Render.
+services:
+  - type: web
+    name: aitu-clearance-api
+    runtime: docker
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: DATABASE_URL        # строка подключения Neon, с ?sslmode=require
+        sync: false
+      - key: ADMIN_LOGIN
+        value: admin
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: APP_ORIGIN          # https://ВАШ-ПРОЕКТ.vercel.app
+        sync: false
+      - key: APP_URL             # то же значение, что APP_ORIGIN
+        sync: false
+      - key: TRUSTED_PROXIES     # Render ставит клиентский IP в X-Forwarded-For; см. инструкцию
+        sync: false
+      - key: TELEGRAM_BOT_USERNAME
+        value: aitu_bypass_sheet_bot
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_WEBHOOK_SECRET
+        generateValue: true
