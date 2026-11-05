@@ -13,13 +13,28 @@ import { useDebounced, useQuery, useService } from '../services'
 
 const PAGE_SIZE = 25
 
+// Черновик долга живёт вне формы: поиск догоняет ввод с задержкой и на миг меняет таблицу
+// на скелетон, форма пересоздаётся, а набранный сотрудником текст терять нельзя.
+const drafts = new Map<string, { note: string; due: string }>()
+
 export function DebtForm({ sheet, dept, onDone }: { sheet: Sheet; dept: DeptId; onDone: (msg?: string) => void }) {
   const t = useT()
   const errorText = useErrorText()
   const service = useService()
   const current = markOf(sheet, dept)
-  const [note, setNote] = useState(current?.state === 'debt' ? (current.note ?? '') : '')
-  const [due, setDue] = useState(current?.state === 'debt' ? (current.due ?? '') : '')
+  const key = `${sheet.number}/${dept}`
+  const saved = current?.state === 'debt' ? { note: current.note ?? '', due: current.due ?? '' } : { note: '', due: '' }
+  const [{ note, due }, setDraft] = useState(() => drafts.get(key) ?? saved)
+  const edit = (patch: Partial<typeof saved>) =>
+    setDraft((d) => {
+      const next = { ...d, ...patch }
+      drafts.set(key, next)
+      return next
+    })
+  const finish = (msg?: string) => {
+    drafts.delete(key)
+    onDone(msg)
+  }
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<unknown>(null)
   const today = new Date().toISOString().slice(0, 10)
@@ -30,7 +45,7 @@ export function DebtForm({ sheet, dept, onDone }: { sheet: Sheet; dept: DeptId; 
     setError(null)
     try {
       await service.setMark(sheet.number, dept, { state: 'debt', note, due })
-      onDone(t('Долг записан. Студент увидит его в своём кабинете.', 'Берешек жазылды. Студент оны өз кабинетінде көреді.'))
+      finish(t('Долг записан. Студент увидит его в своём кабинете.', 'Берешек жазылды. Студент оны өз кабинетінде көреді.'))
     } catch (err) {
       setError(err)
       setBusy(false)
@@ -39,7 +54,7 @@ export function DebtForm({ sheet, dept, onDone }: { sheet: Sheet; dept: DeptId; 
   const field = errorField(error)
 
   return (
-    <form className="debt-form" onSubmit={submit} onKeyDown={(e) => e.key === 'Escape' && onDone()} noValidate>
+    <form className="debt-form" onSubmit={submit} onKeyDown={(e) => e.key === 'Escape' && finish()} noValidate>
       <div className="field">
         <label htmlFor={`note-${sheet.number}`}>{t('Что должен студент', 'Студенттің берешегі')}</label>
         <textarea
@@ -50,7 +65,7 @@ export function DebtForm({ sheet, dept, onDone }: { sheet: Sheet; dept: DeptId; 
           value={note}
           placeholder={t('Например: вернуть книгу «Базы данных», инв. № 2210', 'Мысалы: «Деректер базасы» кітабын қайтару, инв. № 2210')}
           aria-invalid={field === 'note'}
-          onChange={(e) => setNote(e.target.value)}
+          onChange={(e) => edit({ note: e.target.value })}
         />
         <span className="counter">
           {note.length}/{NOTE_MAX}
@@ -58,14 +73,14 @@ export function DebtForm({ sheet, dept, onDone }: { sheet: Sheet; dept: DeptId; 
       </div>
       <div className="field field--date">
         <label htmlFor={`due-${sheet.number}`}>{t('Срок', 'Мерзім')}</label>
-        <input id={`due-${sheet.number}`} type="date" min={today} value={due} aria-invalid={field === 'due'} onChange={(e) => setDue(e.target.value)} />
+        <input id={`due-${sheet.number}`} type="date" min={today} value={due} aria-invalid={field === 'due'} onChange={(e) => edit({ due: e.target.value })} />
       </div>
       <div className="debt-form-actions">
         <button className="btn btn--danger" type="submit" disabled={busy} aria-busy={busy}>
           {busy && <Spinner />}
           {t('Записать долг', 'Берешекті жазу')}
         </button>
-        <button className="btn btn--quiet" type="button" onClick={() => onDone()}>
+        <button className="btn btn--quiet" type="button" onClick={() => finish()}>
           {t('Отмена', 'Болдырмау')}
         </button>
       </div>

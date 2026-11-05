@@ -24,6 +24,15 @@ test('«Нет задолженности» убирает лист из оче�
   expect(world.sheets.pendingSheet.marks.find((m) => m.department === 'library')).toMatchObject({ state: 'clear', by: 'Гульнара Нуртазина' })
 })
 
+test('текст долга не пропадает, когда поиск догоняет ввод', async ({ page }) => {
+  // поиск срабатывает с задержкой и на миг перерисовывает таблицу; форма при этом пересоздаётся
+  await page.getByPlaceholder('ФИО, группа или №').fill('Нурлан')
+  await page.getByRole('row', { name: /Нурлан Ахметов/ }).getByRole('button', { name: 'Есть долг' }).click()
+  await page.locator('.debt-form textarea').fill('Вернуть «Базы данных»')
+  await page.waitForTimeout(700)
+  await expect(page.locator('.debt-form textarea')).toHaveValue('Вернуть «Базы данных»')
+})
+
 test('долг без описания не уходит на сервер, долг с описанием появляется во вкладке', async ({ page, world }) => {
   const row = page.getByRole('row', { name: /Нурлан Ахметов/ })
   await row.getByRole('button', { name: 'Есть долг' }).click()
